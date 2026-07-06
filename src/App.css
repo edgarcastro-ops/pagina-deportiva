@@ -1,0 +1,245 @@
+.navbar {
+  width: 100%;
+  background: #111827;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1f2937;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.login-btn,
+.hero-buttons button,
+.prediction-card button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background:
+    radial-gradient(circle at top, rgba(37, 99, 235, 0.25), transparent 35%),
+    linear-gradient(180deg, #0d1117, #111827);
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 10px 18px;
+  border: 1px solid #2563eb;
+  border-radius: 999px;
+  color: #93c5fd;
+  background: rgba(37, 99, 235, 0.12);
+  font-weight: bold;
+}
+
+.hero h1 {
+  max-width: 980px;
+  margin: auto;
+  font-size: 58px;
+  line-height: 1.05;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 25px auto 0;
+  color: #cbd5e1;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.secondary-btn {
+  background: transparent !important;
+  border: 1px solid #3b82f6 !important;
+}
+
+/* GAMES */
+
+.games,
+.predictions {
+  padding: 70px 60px;
+}
+
+.section-title {
+  margin-bottom: 30px;
+}
+
+.section-title span {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.section-title p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.game-card {
+  background: linear-gradient(180deg, #161b22, #0f172a);
+  border: 1px solid #30363d;
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.game-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.game-top span {
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+.game-top small {
+  color: #94a3b8;
+}
+
+.game-card h3 {
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+.game-card p {
+  color: #3b82f6;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.pick-box {
+  margin-top: 25px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.pick-box small {
+  display: block;
+  color: #93c5fd;
+  margin-bottom: 6px;
+}
+
+.confidence {
+  margin-top: 16px;
+  color: #cbd5e1;
+}
+
+.prediction-card {
+  text-align: left;
+  max-width: 650px;
+}
+
+.prediction-card p {
+  margin-top: 15px;
+  color: #cbd5e1;
+}
+
+.prediction-card button {
+  margin-top: 20px;
+}
+
+.premium {
+  text-align: center;
+  background: #111827;
+  padding: 80px 20px;
+}
+
+.premium h2 {
+  font-size: 40px;
+}
+
+.premium p {
+  max-width: 650px;
+  margin: 20px auto;
+  color: #cbd5e1;
+}
+
+.premium button {
+  background: #facc15;
+  color: #111827;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.footer {
+  background: #020617;
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .games,
+  .predictions {
+    padding: 35px 20px;
+  }
+
+  .games-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-links a,
+.logo {
+  color: inherit;
+  text-decoration: none;
+}
+}
