@@ -1,57 +1,59 @@
+import { useEffect, useState } from "react";
+import { getTodayMLBGames } from "../services/mlbApi";
+
 function FeaturedGames() {
-  const games = [
-    {
-      league: "MLB",
-      away: "Yankees",
-      home: "Red Sox",
-      time: "7:05 PM",
-      pick: "Yankees ML",
-      confidence: "67%",
-    },
-    {
-      league: "MLB",
-      away: "Dodgers",
-      home: "Braves",
-      time: "8:10 PM",
-      pick: "Más de 8.5 carreras",
-      confidence: "61%",
-    },
-    {
-      league: "MLB",
-      away: "Astros",
-      home: "Rangers",
-      time: "9:40 PM",
-      pick: "Astros +1.5",
-      confidence: "64%",
-    },
-  ];
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadGames() {
+      try {
+        const data = await getTodayMLBGames();
+        setGames(data.slice(0, 3));
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadGames();
+  }, []);
 
   return (
     <section className="games">
       <div className="section-title">
         <span>🔥 Juegos Destacados</span>
-        <p>Partidos clave con análisis rápido y nivel de confianza.</p>
+        <p>Los mejores partidos del día para análisis y picks.</p>
       </div>
 
+      {loading && <p>Cargando juegos destacados...</p>}
+
+      {!loading && games.length === 0 && (
+        <p>No hay juegos disponibles para hoy.</p>
+      )}
+
       <div className="games-container">
-        {games.map((game, index) => (
-          <div className="game-card" key={index}>
+        {games.map((game) => (
+          <div className="game-card" key={game.id}>
             <div className="game-top">
               <span>{game.league}</span>
               <small>{game.time}</small>
             </div>
 
-            <h3>{game.away}</h3>
+            <h3>{game.awayTeam}</h3>
             <p>VS</p>
-            <h3>{game.home}</h3>
+            <h3>{game.homeTeam}</h3>
+
+            <p className="stadium">📍 {game.stadium}</p>
 
             <div className="pick-box">
-              <small>Pick recomendado</small>
-              <strong>{game.pick}</strong>
+              <small>Estado</small>
+              <strong>{game.status}</strong>
             </div>
 
             <div className="confidence">
-              Confianza: <strong>{game.confidence}</strong>
+              <strong>{game.reason}</strong>
             </div>
           </div>
         ))}

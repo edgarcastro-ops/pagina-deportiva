@@ -3,19 +3,21 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">
+      <div className="logo">
         ⚾ SportsHub
-      </Link>
+      </div>
 
       <ul className="nav-links">
+        <li><Link to="/">Inicio</Link></li>
         <li><Link to="/mlb">MLB</Link></li>
-        <li>NBA</li>
-        <li>NFL</li>
-        <li>Pronósticos</li>
-        <li>Premium</li>
+        <li><a href="#">NBA</a></li>
+        <li><a href="#">Fútbol</a></li>
+        <li><a href="#">Premium</a></li>
       </ul>
 
-      <button className="login-btn">Iniciar sesión</button>
+      <button className="login-btn">
+        Iniciar sesión
+      </button>
     </nav>
   );
 }

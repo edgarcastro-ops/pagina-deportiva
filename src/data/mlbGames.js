@@ -1,0 +1,32 @@
+export const mlbGames = [
+  {
+    id: 1,
+    status: "Programado",
+    time: "7:05 PM",
+    awayTeam: "New York Yankees",
+    homeTeam: "Boston Red Sox",
+    stadium: "Fenway Park",
+    prediction: "Yankees ML",
+    confidence: 67,
+  },
+  {
+    id: 2,
+    status: "Programado",
+    time: "8:10 PM",
+    awayTeam: "Los Angeles Dodgers",
+    homeTeam: "Atlanta Braves",
+    stadium: "Truist Park",
+    prediction: "Más de 8.5 carreras",
+    confidence: 61,
+  },
+  {
+    id: 3,
+    status: "Programado",
+    time: "9:40 PM",
+    awayTeam: "Houston Astros",
+    homeTeam: "Texas Rangers",
+    stadium: "Globe Life Field",
+    prediction: "Astros +1.5",
+    confidence: 64,
+  },
+];
